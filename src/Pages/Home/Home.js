@@ -6,14 +6,15 @@ import {
   Icon,
   Grid,
 } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import {
-  BLACK,
-  GREY,
+  PRIMARY_KULER,
+  SECONDARY_KULER,
 } from '../../constants';
 
 const Wrapper = styled.div`
-  background-color: ${GREY};
+  background-color: ${SECONDARY_KULER};
   color: white;
   min-height: 100%;
 `;
@@ -24,7 +25,7 @@ const Hero = styled(Segment)`
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
-  background-color: ${BLACK} !important;
+  background-color: ${PRIMARY_KULER} !important;
 `;
 
 const Title = styled(Header)`
@@ -45,7 +46,7 @@ const Section = styled.section`
 `;
 
 const Block = styled.div`
-  border: 1px solid black;
+  border: 1px solid PRIMARY_KULER;
   border-radius: 5px;
   margin: 1rem;
   padding: 4rem;
@@ -53,6 +54,11 @@ const Block = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.35s ease-in-out;
+
+  &:hover {
+    background-color: ${PRIMARY_KULER};
+  }
 `;
 
 const BlockCaption = styled.p`
@@ -62,9 +68,16 @@ const BlockCaption = styled.p`
 
 const Home = () => {
   const [rooms, setRooms] = useState([]);
+  const [fullscreen, setFullscreen] = useState(false);
+
+  // const setFullscreen = () => {
+    
+  // }
 
   return (
-    <Wrapper>
+    <Wrapper
+      className="fade-in"
+    >
       <Hero
         placeholder
         basic
@@ -88,15 +101,17 @@ const Home = () => {
           textAlign="center"
         >
           <Grid.Column>
-            <Block>
-              <Icon
-                name="home"
-                size="massive"
-              />
-              <BlockCaption>
-                House
-              </BlockCaption>
-            </Block>
+            <Link to="/details">
+              <Block>
+                <Icon
+                  name="home"
+                  size="massive"
+                />
+                <BlockCaption>
+                  House
+                </BlockCaption>
+              </Block>
+            </Link>
           </Grid.Column>
           <Grid.Column>
             <Block>

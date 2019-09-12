@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import 'semantic-ui-css/semantic.min.css';
 import './global.css';
+import './animations.css';
 
 import Routes from './routes';
 

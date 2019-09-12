@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Home from './pages/Home';
+import Details from './pages/Details';
 import FAQ from './pages/FAQ';
 
 const Wrapper = styled.div`
@@ -23,6 +24,12 @@ const Routes = () => (
           exact
           path="/"
           component={Home}
+        />
+
+        <Route
+          exact
+          path="/details"
+          component={Details}
         />
 
         <Route
