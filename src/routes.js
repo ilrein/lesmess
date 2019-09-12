@@ -8,8 +8,8 @@ import styled from 'styled-components';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Home from './Pages/Home';
-import FAQ from './Pages/FAQ';
+import Home from './pages/Home';
+import FAQ from './pages/FAQ';
 
 const Wrapper = styled.div`
   height: 100%;
